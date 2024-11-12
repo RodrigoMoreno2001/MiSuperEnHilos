@@ -1,13 +1,33 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.mycompany.tiendahilos;
 
-/**
- *
- * @author alumno
- */
 public class Cliente {
+    private String nombreCliente;
+    private final String[] posiblesProductos = { "Croquetas para perros", "Snacks de carne deshidratada", "Alimento húmedo enlatado", "Comida balanceada para cachorros", "Galletas para perro sabor pollo", "Alimento hipoalergénico", "Suplemento nutricional para perros", "Bocadillos naturales de pollo", "Comida vegana para perros", "Premios dentales", "Hueso relleno de carne", "Snacks de salmón", "Comida para perros mayores", "Premios sabor tocino", "Croquetas sin cereales", "Galletas de avena y miel", "Puré de verduras para perros", "Bocadillos de pavo", "Alimento orgánico para perros", "Snacks de hígado de pollo" };
+    private String[] productos;
+            
+    public Cliente(String nombreCliente,int productos){
+        this.nombreCliente=nombreCliente;
+        this.productos=new String[productos];       
+        for(int i=0;i<productos;i++) this.productos[i]=posiblesProductos[(int) (Math.random()*posiblesProductos.length)];   
+    }
+
+    public String getNombreCliente() {
+        return nombreCliente;
+    }
+
+    public void setNombreCliente(String nombreCliente) {
+        this.nombreCliente = nombreCliente;
+    }
+
+    public String[] getProductos() {
+        return productos;
+    }
+
+    public void setProductos(String[] productos) {
+        this.productos = productos;
+    }
+    
+    
     
 }
