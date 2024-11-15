@@ -5,7 +5,6 @@ import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 public class Caja {
    private Semaphore sem=new Semaphore(2); 
    public void pasarPorCaja(Cliente cliente){
@@ -13,7 +12,7 @@ public class Caja {
            sem.acquire();        
            long inicio=System.currentTimeMillis();
            long producto;
-           System.out.println("Bienvenido "+ cliente.getNombreCliente()+ " a la caja ");
+           System.out.println("Bienvenido "+ cliente.getNombreCliente()+ " a la caja ("+cliente.getProductos().size()+" productos)");
 
            for(String aux:cliente.getProductos()){
                producto=System.currentTimeMillis();
